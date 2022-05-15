@@ -10,21 +10,16 @@ import {
   REGISTER
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import todoReducer from "./reducers/todo-reducer/";
-import fakeApiReducer from "./reducers/fakeapi-users-reducer";
 import authReducer from "./reducers/auth-reducer";
 
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ["todo",
-    "fakeapi",
+  blacklist: [
     "auth"
   ]
 };
 const rootReducer = combineReducers({
-  todo: todoReducer,
-  fakeapi: fakeApiReducer,
   auth: authReducer,
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -1,6 +1,8 @@
 const ApiError = require('../exceptions/api-error')
 
 //#use only after auth-services.js-middleware
+//TODO must be checked!
+
 module.exports = (roles) => {
     return (req, res, next) => {
         if(req.method === 'OPTIONS') next()

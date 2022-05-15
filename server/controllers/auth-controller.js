@@ -16,7 +16,7 @@ class authController{
             const userData = await AuthService.registration(email, password)
             res.cookie('refreshToken', userData.refreshToken,
                 {maxAge: TIME_REFRESH_COOKIE, httpOnly: true}
-            ) //TODO add in obj settings => {secure: true} - only for http connection
+            ) //TODO add in obj settings => {secure: true} - only for services connection
             return res.status(201).json(userData)
         } catch (err){
             next(err)
@@ -29,7 +29,7 @@ class authController{
             const userData = await AuthService.login(email, password)
             res.cookie('refreshToken', userData.refreshToken,
                 {maxAge: TIME_REFRESH_COOKIE, httpOnly: true}
-            ) //TODO add in obj settings => {secure: true} - only for http connection
+            ) //TODO add in obj settings => {secure: true} - only for services connection
             // console.log(userData)
             return res.status(201).json(userData)
         } catch (err){
@@ -63,7 +63,7 @@ class authController{
             const userData = await AuthService.refresh(refreshToken)
             res.cookie('refreshToken', userData.refreshToken,
                 {maxAge: TIME_REFRESH_COOKIE, httpOnly: true}
-            ) //TODO add in obj settings => {secure: true} - only for http connection
+            ) //TODO add in obj settings => {secure: true} - only for services connection
             return res.status(201).json(userData)
         } catch (err){
             next(err)

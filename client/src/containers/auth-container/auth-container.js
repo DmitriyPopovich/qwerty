@@ -7,7 +7,7 @@ import {getAuthUser} from "../../store/reducers/auth-reducer/selectors";
 
 import AuthForm from "../../components/auth-form";
 import LoginPage from "../../components/auth-temp-page";
-import './auth-container.scss'
+
 
 
 const AuthContainer = () => {

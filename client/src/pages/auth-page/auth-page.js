@@ -5,11 +5,9 @@ import AuthContainer from "../../containers/auth-container";
 const AuthPage = () => {
 
   return (
-    <div className="todo-app" data-testid="users_div_app">
       <ErrorBoundary>
           <AuthContainer />
       </ErrorBoundary>
-    </div>
   );
 };
 

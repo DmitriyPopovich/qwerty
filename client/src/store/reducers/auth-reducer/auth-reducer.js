@@ -1,16 +1,16 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import AuthService from "../../../http/auth-services";
+import AuthService from "../../../services/axios/auth_service";
 
 
 export const loginUser = createAsyncThunk(
     "auth/login",
     async function ({email, password}, { rejectWithValue, dispatch }) {
         try {
-            const final_data = await AuthService.getLogin({email, password})
-            localStorage.setItem('token', final_data.accessToken)
-            dispatch(setUser(final_data.user))
+            const {data} = await AuthService.getLogin(email, password)
+            localStorage.setItem('token', data.accessToken)
+            dispatch(setUser(data.user))
         } catch (err) {
-            return rejectWithValue(err.message);
+            return rejectWithValue(err.data.message);//TODO check !!
         }
     }
 );
@@ -18,11 +18,11 @@ export const registrationUser = createAsyncThunk(
     "auth/registration",
     async function ({email, password}, { rejectWithValue, dispatch }) {
         try {
-            const final_data = await AuthService.getRegistration({email, password})
-            localStorage.setItem('token', final_data.accessToken)
-            dispatch(setUser(final_data.user))
+            const {data} = await AuthService.getRegistration(email, password)
+            localStorage.setItem('token', data.accessToken)
+            dispatch(setUser(data.user))
         } catch (err) {
-            return rejectWithValue(err.message);
+            return rejectWithValue(err.data.message);
         }
     }
 );
@@ -30,13 +30,13 @@ export const logoutUser = createAsyncThunk(
     "auth/logout",
     async function (_, { rejectWithValue, dispatch }) {
         try {
-            const final_data = await AuthService.getLogout()
-            console.log(final_data)
+            const {data} = await AuthService.getLogout()
+            console.log(data)
             dispatch(setUser(false))
             localStorage.removeItem('token')
         } catch (err) {
             console.log(err)
-            return rejectWithValue(err.message);
+            return rejectWithValue(err.data.message);
         }
     }
 );
@@ -44,12 +44,12 @@ export const checkAuthUser = createAsyncThunk(
     "auth/refresh",
     async function (_, { rejectWithValue, dispatch }) {
         try {
-            const final_data = await AuthService.getRefresh()
-            console.log(final_data)
-            localStorage.setItem('token', final_data.accessToken)
-            dispatch(setUser(final_data.user))
+            const {data} = await AuthService.getRefresh()
+            console.log(data)
+            localStorage.setItem('token', data.accessToken)
+            dispatch(setUser(data.user))
         } catch (err) {
-            return rejectWithValue(err.message);
+            return rejectWithValue(err.data.message);
         }
     }
 );

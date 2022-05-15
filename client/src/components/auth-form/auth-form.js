@@ -1,4 +1,5 @@
 import React from "react";
+import './auth-container.scss'
 
 const AuthForm = (props) => {
     const {handlerEmail, handlerPassword, invalidInputEmail, invalidInputPassword, email, password,
