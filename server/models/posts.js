@@ -4,6 +4,6 @@ const postsSchema = new Schema({
     isActivated: {type: Boolean, default: true},
     title: {type: String, required: true},
     text: {type: String, required: true},
-    author: [{type: Object, ref: 'User'}] //TODO проверить поле
+    author: [{type: Schema.Types.ObjectId, ref: 'User'}]
 })
-module.exports = model('User', postsSchema)
+module.exports = model('Posts', postsSchema)

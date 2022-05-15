@@ -5,6 +5,7 @@ require('dotenv').config()
 
 const authRouter = require('./router/auth-router')
 const userRouter = require('./router/user-router')
+const postRouter = require('./router/post-router')
 const {errorMsg, successMsg} = require('./helpers/chalk_helper')
 const errorMiddleware = require('./middlewares/error-middleware')
 const mongooseConnect = require('./connectDB/mongoDB')
