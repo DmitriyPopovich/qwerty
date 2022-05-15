@@ -1,12 +1,11 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import AuthPage from "../pages/auth-page";
-
+import Posts from "../pages/posts/posts";
 
 const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/" exact element={<AuthPage />} />
+      <Route path="/" exact element={<Posts />} />
       <Route path="*" element={<h3>Page not found</h3>} />
     </Routes>
   );

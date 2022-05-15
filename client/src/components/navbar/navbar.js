@@ -1,11 +1,19 @@
 import React from 'react'
 import {NavLink} from "react-router-dom"
 import './navbar.scss'
+import {useDispatch} from "react-redux";
+import {checkAuthUser, logoutUser} from "../../store/reducers/auth-reducer/auth-reducer";
 
 const Navbar = () => {
+    const user = 'Dima'
+    const dispatch = useDispatch()
+    const handlerLogout = () => {
+        dispatch(logoutUser())
+    }
+    const handlerRefresh = () => {
+        dispatch(checkAuthUser())
+    }
 
-    const changeStatus = false
-    const username = 'Dima'
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light">
@@ -25,7 +33,7 @@ const Navbar = () => {
                                     aria-current="page"
                                     type={'button'}
                                 >
-                                    {!changeStatus && 'Posts'}
+                                    {user && 'Posts'}
                                 </NavLink>
                             </li>
                             <li className="nav-item">
@@ -35,7 +43,7 @@ const Navbar = () => {
                                     className="nav-link"
                                     type={'button'}
                                 >
-                                    {!changeStatus && ' New post'}
+                                    {user && ' New post'}
                                 </NavLink>
                             </li>
                             <li className="nav-item" style={{marginTop: '1px'}}>
@@ -43,13 +51,13 @@ const Navbar = () => {
                                     <a className="btn dropdown-toggle" id="dropdownMenuButton1"
                                        data-bs-toggle="dropdown" aria-expanded="false"
                                     >
-                                        {!changeStatus && username}
                                     </a>
                                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                         <li>
                                             <a
                                                 className="dropdown-item"
                                                 type='button'
+                                                onClick={handlerLogout}
                                             >
                                                 Log out
                                             </a>

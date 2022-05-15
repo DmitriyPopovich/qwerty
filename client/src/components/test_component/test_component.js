@@ -1,6 +1,15 @@
 import React from "react";
+import {checkAuthUser, logoutUser} from "../../store/reducers/auth-reducer/auth-reducer";
+import {useDispatch} from "react-redux";
 
-const LoginPage = ({handlerLogout,handlerRefresh}) => {
+const TestComponent = () => {
+    const dispatch = useDispatch()
+    const handlerLogout = () => {
+        dispatch(logoutUser())
+    }
+    const handlerRefresh = () => {
+        dispatch(checkAuthUser())
+    }
     return(
         <div className='col db-button  mb-3'>
             <button
@@ -23,4 +32,4 @@ const LoginPage = ({handlerLogout,handlerRefresh}) => {
     )
 }
 
-export default LoginPage
+export default TestComponent

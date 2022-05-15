@@ -8,6 +8,7 @@ import { createReduxStore, persistCreator } from "./store";
 import App from "./components/app";
 import ErrorBoundary from "./containers/error-boundry";
 import initialState from "./store/initial-state";
+import withAuth_OLD from "./hoc/with-auth_OLD";
 
 const container = document.getElementById("root");
 const root = ReactDOMClient.createRoot(container);
@@ -20,7 +21,7 @@ root.render(
     <PersistGate loading={null} persistor={persist}>
       <ErrorBoundary>
         <Router>
-          <App />
+            <App />
         </Router>
       </ErrorBoundary>
     </PersistGate>

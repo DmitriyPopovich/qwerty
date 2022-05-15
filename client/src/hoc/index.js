@@ -1,8 +1,7 @@
 import withData from './with-data';
-import withAuth from './with-auth';
-
+import withAuth_OLD from './with-auth_OLD';
 
 export {
     withData,
-    withAuth
+    withAuth_OLD
 };
