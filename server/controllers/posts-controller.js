@@ -39,7 +39,15 @@ class postsController{
             next(err)
         }
     }
-
-
+    async deletePost(req ,res, next){
+        try{
+            const {id_user} = req.user
+            const {id_post} = req.get
+            const result = await PostsService.deletePost(id_user, id_post)
+            return res.status(200).json(result)
+        } catch (err){
+            next(err)
+        }
+    }
 }
 module.exports = new postsController()
