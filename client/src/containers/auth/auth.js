@@ -4,12 +4,12 @@ import {checkAuthUser, loginUser, logoutUser, registrationUser} from "../../stor
 import {getAuthUser} from "../../store/reducers/auth-reducer/selectors";
 import LoginPage from "../../components/test_component";
 import AppRouter from "../../router";
-import AuthFormContainer from "../auth-form-container/auth-form-container";
+import AuthFormContainer from "../auth-form/auth-form-container";
 import Navbar from "../../components/navbar";
 
 
 
-const AuthContainer = () => {
+const Auth = () => {
 
     const dispatch = useDispatch()
     useEffect(()=>{
@@ -38,4 +38,4 @@ const AuthContainer = () => {
         );
 }
 
-export default AuthContainer
+export default Auth

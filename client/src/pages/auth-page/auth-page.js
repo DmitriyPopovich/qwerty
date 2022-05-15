@@ -1,12 +1,12 @@
 import React from "react";
 import ErrorBoundary from "../../containers/error-boundry";
-import AuthContainer from "../../containers/auth-container";
+import Auth from "../../containers/auth";
 
 const AuthPage = () => {
 
   return (
       <ErrorBoundary>
-          <AuthContainer />
+          <Auth />
       </ErrorBoundary>
   );
 };

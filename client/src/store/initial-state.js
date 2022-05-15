@@ -2,8 +2,8 @@ const initialState = {
   auth: {
     user: false,
     status: false,
-    error: false
+    error: false,
+    isAuth: false
   },
-  isAuth: false
 };
 export default initialState;

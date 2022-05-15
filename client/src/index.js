@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { PersistGate } from "redux-persist/integration/react";
 import { createReduxStore, persistCreator } from "./store";
 
-import App from "./components/app";
+import App from "./containers/app";
 import ErrorBoundary from "./containers/error-boundry";
 import initialState from "./store/initial-state";
 import withAuth_OLD from "./hoc/with-auth_OLD";

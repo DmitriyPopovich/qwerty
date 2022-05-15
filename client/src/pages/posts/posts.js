@@ -8,8 +8,6 @@ import './posts.scss'
 
 const Posts = ({posts=[]}) => {
 
-
-
     return (
         <>
             {posts &&
@@ -57,7 +55,9 @@ const Posts = ({posts=[]}) => {
                     }
             )
             }
+            <p>no posts</p>
         </>
+
     )
 }
 

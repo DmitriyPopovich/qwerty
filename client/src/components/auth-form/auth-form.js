@@ -45,10 +45,6 @@ const AuthForm = (props) => {
                         >
                             Log in
                         </button>
-                    </div>
-                </div>
-                <div className='row'>
-                    <div className='col db-button  mb-3'>
                         <button
                             onClick={handlerRegistration}
                             className='btn btn-outline-dark'
