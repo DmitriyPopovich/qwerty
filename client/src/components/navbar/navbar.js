@@ -1,18 +1,9 @@
 import React from 'react'
 import {NavLink} from "react-router-dom"
 import './navbar.scss'
-import {useDispatch} from "react-redux";
-import {checkAuthUser, logoutUser} from "../../store/reducers/auth-reducer/auth-reducer";
 
-const Navbar = () => {
-    const user = 'Dima'
-    const dispatch = useDispatch()
-    const handlerLogout = () => {
-        dispatch(logoutUser())
-    }
-    const handlerRefresh = () => {
-        dispatch(checkAuthUser())
-    }
+
+const Navbar = ({user, handlerLogout}) => {
 
     return (
         <>

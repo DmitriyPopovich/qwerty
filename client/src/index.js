@@ -8,13 +8,14 @@ import { createReduxStore, persistCreator } from "./store";
 import App from "./containers/app";
 import ErrorBoundary from "./containers/error-boundry";
 import initialState from "./store/initial-state";
-import withAuth_OLD from "./hoc/with-auth_OLD";
 
 const container = document.getElementById("root");
 const root = ReactDOMClient.createRoot(container);
 
 const store = createReduxStore(initialState);
 const persist = persistCreator(store);
+
+console.log('start')
 
 root.render(
   <Provider store={store}>
