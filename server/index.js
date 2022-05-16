@@ -23,7 +23,7 @@ app.use(
 
 
 // app.use(cors({ origin: process.env.CLIENT_URL, credentials :  true}));
-// app.options(`*`, cors(cors_opts))
+app.options(`*`, cors(cors_opts))
 
 // app.use((req, res, next) => {
 //     res.append('Access-Control-Allow-Origin', [process.env.CLIENT_URL]);

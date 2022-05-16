@@ -1,8 +1,4 @@
 import React from 'react'
-import {NavLink} from "react-router-dom"
-
-import {useDispatch} from "react-redux";
-import {checkAuthUser, logoutUser} from "../../store/reducers/auth-reducer/auth-reducer";
 import {v4} from "uuid";
 import moment from "moment";
 

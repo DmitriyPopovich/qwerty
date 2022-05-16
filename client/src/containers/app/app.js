@@ -11,7 +11,6 @@ import "./app.scss";
 
 
 const App = () => {
-    console.log('app')
     const dispatch = useDispatch()
     useEffect(()=>{
         if(localStorage.getItem('token')){
@@ -20,7 +19,6 @@ const App = () => {
         }
     },[])
     const isAuth = useSelector(getAuth);
-    // console.log(isAuth)
 
     return isAuth ? (
         <>

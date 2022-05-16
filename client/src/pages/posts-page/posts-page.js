@@ -1,15 +1,13 @@
 import React from 'react'
 
+import ErrorBoundary from "../../containers/error-boundry";
+import PostsContainer from "../../containers/post";
 
-import Post from "../../components/post";
-
-const PostsPage = ({posts=[]}) => {
+const PostsPage = () => {
     return (
-        <>
-            {posts && posts?.map(post => <Post post={post}/>)}
-            <p>no posts</p>
-        </>
-
+        <ErrorBoundary>
+            <PostsContainer />
+        </ErrorBoundary>
     )
 }
 

@@ -15,8 +15,6 @@ const root = ReactDOMClient.createRoot(container);
 const store = createReduxStore(initialState);
 const persist = persistCreator(store);
 
-console.log('start')
-
 root.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persist}>

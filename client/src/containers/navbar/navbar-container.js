@@ -2,20 +2,17 @@ import React from 'react'
 import {useDispatch, useSelector} from "react-redux";
 import {logoutUser} from "../../store/reducers/auth-reducer/auth-reducer";
 import Navbar from "../../components/navbar";
+import {getUser} from "../../store/reducers/auth-reducer/selectors/selectors";
 
 const NavbarContainer = () => {
     const dispatch = useDispatch()
     const handlerLogout = () => {
         dispatch(logoutUser())
     }
-    // const user_1 = useSelector(getAuthUser)
-    // console.log((user_1))
-
-    const user = 'Dima'
-    console.log(user)
+    const {email} = useSelector(getUser)
 
     return (
-        <Navbar user={user} handlerLogout={handlerLogout}/>
+        <Navbar user={email} handlerLogout={handlerLogout}/>
     )
 }
 export default NavbarContainer
