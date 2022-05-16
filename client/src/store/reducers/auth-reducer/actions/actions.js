@@ -1,4 +1,4 @@
-import AuthService from "../../../../services/axios/auth_service";
+import AuthService from "../../../../services/axios/auth-service";
 import {loginUserAction, setAuth, setUser} from "../auth-reducer";
 
 

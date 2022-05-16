@@ -15,12 +15,13 @@ const PostFormContainer = () => {
     const handlerText = (e) => setText(e.target.value)
 
     const toogleStatus = false //TODO !!
-    const post_id = id //TODO !!
+    const post_id = id ? id : false//TODO !!
 
 
     const handlerPost = () => {
         console.log('posts.....')
-        // dispatch(setPost(title, text))
+        console.log(post_id, title, text)
+        //dispatch(setPost(title, text))
         // navigate('/')
     }
 
