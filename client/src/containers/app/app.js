@@ -8,6 +8,7 @@ import Navbar from "../../components/navbar";
 import AppRouter from "../../router";
 import AuthFormContainer from "../auth-form/auth-form-container";
 import "./app.scss";
+import AuthPage from "../../pages/auth-page";
 
 const App = () => {
     const dispatch = useDispatch()
@@ -25,7 +26,7 @@ const App = () => {
             <AppRouter />
         </>
     ) : (
-        <AuthFormContainer />
+        <AuthPage />
     )
 }
 export default App
