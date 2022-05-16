@@ -7,7 +7,6 @@ import {getAuth} from "../../store/reducers/auth-reducer/selectors";
 import Navbar from "../../components/navbar";
 import AppRouter from "../../router";
 import AuthFormContainer from "../auth-form/auth-form-container";
-import TestComponent from "../../components/test_component";
 import "./app.scss";
 
 const App = () => {
@@ -24,7 +23,6 @@ const App = () => {
         <>
             <Navbar />
             <AppRouter />
-            {/*<TestComponent />*/}
         </>
     ) : (
         <AuthFormContainer />
