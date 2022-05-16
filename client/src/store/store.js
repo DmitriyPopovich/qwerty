@@ -11,16 +11,19 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import authReducer from "./reducers/auth-reducer";
+import postsReducer from "./reducers/posts-reducer"
 
 const persistConfig = {
   key: "root",
   storage,
   blacklist: [
-    "auth"
+    "auth",
+    "posts"
   ]
 };
 const rootReducer = combineReducers({
   auth: authReducer,
+  posts: postsReducer,
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 export const createReduxStore = (initialState = {}) => {

@@ -1,0 +1,1 @@
+export const getPost = (state) => state?.posts?.post || false;

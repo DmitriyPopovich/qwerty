@@ -1,5 +1,5 @@
-import AuthService from "../../../../services/axios/auth-service";
-import {loginUserAction, setAuth, setUser} from "../auth-reducer";
+import AuthService from "../../../../services/axios/auth-services";
+import {setAuth, setUser} from "../auth-reducer";
 
 
 const _setAuthUser = (data, dispatch) => {
