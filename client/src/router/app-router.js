@@ -8,7 +8,7 @@ const AppRouter = () => {
   return (
     <Routes>
       <Route path="/" exact element={<PostsPage />} />
-        <Route path="/post/:id" element={<PostPage id={1234}/>} />
+        <Route path="/post/:id" element={<PostPage/>} />
         <Route path="/post" element={<PostPage />} />
       <Route path="*" element={<ErrorPage/>}/>
     </Routes>

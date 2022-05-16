@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
 import {useDispatch} from "react-redux";
 import PostForm from "../../components/post-form/post-form";
+import {useParams} from "react-router-dom";
 
 
 
-const PostFormContainer = ({id}) => {
+const PostFormContainer = () => {
+    const {id} = useParams()
 
     const dispatch = useDispatch()
     const [title, setTitle] = useState('')
