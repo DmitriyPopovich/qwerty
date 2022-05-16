@@ -1,28 +1,28 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import {loginPayload, registrationPayload, logoutPayload, checkAuthUserPayload} from "./payloads";
+import {loginAction, registrationAction, logoutAction, checkAuthUserAction} from "./actions";
 
 export const loginUser = createAsyncThunk(
     "auth/login",
     async function ({email, password}, { rejectWithValue, dispatch }) {
-        await loginPayload({email, password}, { rejectWithValue, dispatch})
+        await loginAction({email, password}, { rejectWithValue, dispatch})
     }
 );
 export const registrationUser = createAsyncThunk(
     "auth/registration",
     async function ({email, password}, { rejectWithValue, dispatch }) {
-        await registrationPayload({email, password}, { rejectWithValue, dispatch})
+        await registrationAction({email, password}, { rejectWithValue, dispatch})
     }
 );
 export const logoutUser = createAsyncThunk(
     "auth/logout",
     async function (_, { rejectWithValue, dispatch }) {
-        await logoutPayload(_, { rejectWithValue, dispatch})
+        await logoutAction(_, { rejectWithValue, dispatch})
     }
 );
 export const checkAuthUser = createAsyncThunk(
     "auth/refresh",
     async function (_, { rejectWithValue, dispatch }) {
-        await checkAuthUserPayload(_, { rejectWithValue, dispatch})
+        await checkAuthUserAction(_, { rejectWithValue, dispatch})
     }
 );
 

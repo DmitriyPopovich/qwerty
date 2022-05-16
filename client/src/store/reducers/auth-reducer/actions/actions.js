@@ -1,5 +1,5 @@
 import AuthService from "../../../../services/axios/auth_service";
-import {setAuth, setUser} from "../auth-reducer";
+import {loginUserAction, setAuth, setUser} from "../auth-reducer";
 
 
 const _setAuthUser = (data, dispatch) => {
@@ -14,7 +14,7 @@ const _unsetAuthUser = (dispatch) => {
 }
 
 
-export const loginPayload = async ({email, password}, { rejectWithValue, dispatch }) => {
+export const loginAction = async ({email, password}, { rejectWithValue, dispatch }) => {
     try {
         console.log('login.....')
         const {data} = await AuthService.getLogin(email, password)
@@ -24,7 +24,7 @@ export const loginPayload = async ({email, password}, { rejectWithValue, dispatc
         return rejectWithValue(err.data.message);//TODO check !!
     }
 }
-export const registrationPayload = async ({email, password}, { rejectWithValue, dispatch }) => {
+export const registrationAction = async ({email, password}, { rejectWithValue, dispatch }) => {
     try {
         const {data} = await AuthService.getRegistration(email, password)
         _setAuthUser(data, dispatch)
@@ -33,7 +33,7 @@ export const registrationPayload = async ({email, password}, { rejectWithValue, 
         return rejectWithValue(err.data.message);
     }
 }
-export const logoutPayload = async (_, { rejectWithValue, dispatch }) => {
+export const logoutAction = async (_, { rejectWithValue, dispatch }) => {
     try {
         const {data} = await AuthService.getLogout()
         console.log(data)
@@ -43,7 +43,7 @@ export const logoutPayload = async (_, { rejectWithValue, dispatch }) => {
         return rejectWithValue(err.data.message);
     }
 }
-export const checkAuthUserPayload = async (_, { rejectWithValue, dispatch }) => {
+export const checkAuthUserAction = async (_, { rejectWithValue, dispatch }) => {
     try {
         const {data} = await AuthService.getRefresh()
         _setAuthUser(data, dispatch)
