@@ -4,27 +4,21 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import {useDispatch, useSelector} from "react-redux";
 import {checkAuthUser} from "../../store/reducers/auth-reducer/auth-reducer";
 import {getAuth} from "../../store/reducers/auth-reducer/selectors";
-import AppRouter from "../../router";
 import AuthPage from "../../pages/auth-page";
-import NavbarContainer from "../navbar/navbar-container";
+import MainPage from "../../pages/main-page";
 import "./app.scss";
-
 
 const App = () => {
     const dispatch = useDispatch()
     useEffect(()=>{
         if(localStorage.getItem('token')){
-            // console.log('проверка авторизации при загрузке container')
             dispatch(checkAuthUser())
         }
     },[])
     const isAuth = useSelector(getAuth);
 
     return isAuth ? (
-        <>
-            <NavbarContainer />
-            <AppRouter />
-        </>
+        <MainPage />
     ) : (
         <AuthPage />
     )

@@ -6,7 +6,7 @@ const PostForm = (props) => {
         <div className='container-fluid w-75 mt-5 db-new-post' data-testid='post-container'>
             <div className='row'>
                 <form>
-                    <p className='text-white mt-3 text-center'>{toogleStatus ? 'Make changes' : 'Create your post'}</p>
+                    <p className='text-white mt-3 text-center'>{toogleStatus ? 'Make changes' : 'Create your posts'}</p>
                     <hr/>
                     <div className='row'>
                         <div className={'col mt-3'}>

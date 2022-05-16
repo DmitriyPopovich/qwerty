@@ -34,7 +34,7 @@ const Navbar = ({user, handlerLogout}) => {
                                     className="nav-link"
                                     type={'button'}
                                 >
-                                    {user && ' New post'}
+                                    {user && ' New posts'}
                                 </NavLink>
                             </li>
                             <li className="nav-item" style={{marginTop: '1px'}}>

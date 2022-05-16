@@ -38,7 +38,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use('/auth', authRouter)
 app.use('/user', userRouter)
-app.use('/post', postRouter)
+app.use('/posts', postRouter)
 
 app.use(errorMiddleware)
 

@@ -12,7 +12,7 @@ const PostFormContainer = ({id}) => {
     const handlerTitle = (e) => setTitle(e.target.value)
     const handlerText = (e) => setText(e.target.value)
     const handlerPost = () => {
-        console.log('post.....')
+        console.log('posts.....')
         // dispatch(setPost(title, text))
         setTitle('')
         setText('')
