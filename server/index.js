@@ -42,8 +42,6 @@ app.use('/post', postRouter)
 
 app.use(errorMiddleware)
 
-
-
 const start = async () => {
     try{
         await mongooseConnect()

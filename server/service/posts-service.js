@@ -1,6 +1,7 @@
 const PostsModel = require('../models/posts')
 const UserModel = require('../models/user')
 const ApiError = require("../exceptions/api-error");
+const PostDto = require("../dtos/post-dto");
 
 class PostsService{
     async getPosts(){
@@ -19,7 +20,7 @@ class PostsService{
     }
     async getPost(id){
         const post = await PostsModel.findOne({id})
-        return post
+        return new PostDto(post)
     }
     async updatePost(id_user, id_post, title, text){
         const post = await PostsModel.findOne({_id:id_post, author:id_user})

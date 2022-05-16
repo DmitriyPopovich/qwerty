@@ -1,15 +1,16 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Posts from "../pages/posts/posts";
-import NewPostContainer from "../containers/new-post/new-post-container";
+import PostsPage from "../pages/posts-page/posts-page";
+import PostPage from "../pages/post-page";
+import ErrorPage from "../pages/error-page";
 
 const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/" exact element={<Posts />} />
-      <Route path="/posts" exact element={<Posts />} />
-      <Route path="/new_post" exact element={<NewPostContainer />} />
-      <Route path="*" element={<h3>Page not found</h3>} />
+      <Route path="/" exact element={<PostsPage />} />
+        <Route path="/post/:id" element={<PostPage id={1234}/>} />
+        <Route path="/post" element={<PostPage />} />
+      <Route path="*" element={<ErrorPage/>}/>
     </Routes>
   );
 };

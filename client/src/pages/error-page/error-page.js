@@ -6,7 +6,7 @@ const ErrorPage = () => {
        <div className="container">
            <div className="row">
                <div className="col text-white d-flex justify-content-center mt-5">
-                   <h1>oops, something wrong</h1>
+                   <h1>404 not found</h1>
                </div>
            </div>
        </div>

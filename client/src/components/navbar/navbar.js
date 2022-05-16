@@ -39,7 +39,7 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <NavLink
                                     activeclassname={"active"}
-                                    to={'/new_post'}
+                                    to={'/post'}
                                     className="nav-link"
                                     type={'button'}
                                 >
