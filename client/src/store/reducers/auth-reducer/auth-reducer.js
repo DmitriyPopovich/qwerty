@@ -1,62 +1,28 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import AuthService from "../../../services/axios/auth_service";
-
+import {loginPayload, registrationPayload, logoutPayload, checkAuthUserPayload} from "./payloads";
 
 export const loginUser = createAsyncThunk(
     "auth/login",
     async function ({email, password}, { rejectWithValue, dispatch }) {
-        try {
-            const {data} = await AuthService.getLogin(email, password)
-            localStorage.setItem('token', data.accessToken)
-            dispatch(setUser(data.user))
-            dispatch(setAuth(true))
-        } catch (err) {
-            console.log(err)
-            return rejectWithValue(err.data.message);//TODO check !!
-        }
+        await loginPayload({email, password}, { rejectWithValue, dispatch})
     }
 );
 export const registrationUser = createAsyncThunk(
     "auth/registration",
     async function ({email, password}, { rejectWithValue, dispatch }) {
-        try {
-            const {data} = await AuthService.getRegistration(email, password)
-            localStorage.setItem('token', data.accessToken)
-            dispatch(setUser(data.user))
-            dispatch(setAuth(true))
-        } catch (err) {
-            console.log(err)
-            return rejectWithValue(err.data.message);
-        }
+        await registrationPayload({email, password}, { rejectWithValue, dispatch})
     }
 );
 export const logoutUser = createAsyncThunk(
     "auth/logout",
     async function (_, { rejectWithValue, dispatch }) {
-        try {
-            const {data} = await AuthService.getLogout()
-            console.log(data)
-            dispatch(setUser(false))
-            dispatch(setAuth(false))
-            localStorage.removeItem('token')
-        } catch (err) {
-            console.log(err)
-            return rejectWithValue(err.data.message);
-        }
+        await logoutPayload(_, { rejectWithValue, dispatch})
     }
 );
 export const checkAuthUser = createAsyncThunk(
     "auth/refresh",
     async function (_, { rejectWithValue, dispatch }) {
-        try {
-            const {data} = await AuthService.getRefresh()
-            localStorage.setItem('token', data.accessToken)
-            dispatch(setUser(data.user))
-            dispatch(setAuth(true))
-        } catch (err) {
-            console.log(err)
-            return rejectWithValue(err.data.message);
-        }
+        await checkAuthUserPayload(_, { rejectWithValue, dispatch})
     }
 );
 

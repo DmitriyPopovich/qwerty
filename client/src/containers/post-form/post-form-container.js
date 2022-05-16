@@ -1,26 +1,29 @@
 import React, {useState} from 'react'
 import {useDispatch} from "react-redux";
 import PostForm from "../../components/post-form/post-form";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 
 
 const PostFormContainer = () => {
     const {id} = useParams()
-
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const [title, setTitle] = useState('')
     const [text, setText] = useState('')
     const handlerTitle = (e) => setTitle(e.target.value)
     const handlerText = (e) => setText(e.target.value)
+
+    const toogleStatus = false //TODO !!
+    const post_id = id //TODO !!
+
+
     const handlerPost = () => {
         console.log('posts.....')
         // dispatch(setPost(title, text))
-        setTitle('')
-        setText('')
+        // navigate('/')
     }
-    const toogleStatus = false //TODO !!
-    const post_id = id //TODO !!
+
 
     return (
         <PostForm

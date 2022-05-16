@@ -1,8 +1,8 @@
 import {useDispatch} from "react-redux";
 import React, {useState} from "react";
-import {loginUser, registrationUser} from "../../store/reducers/auth-reducer/auth-reducer";
+import {registrationUser} from "../../store/reducers/auth-reducer/auth-reducer";
 import AuthForm from "../../components/auth-form";
-
+import {loginUser} from '../../store/reducers/auth-reducer/auth-reducer'
 
 const AuthFormContainer = () => {
 
