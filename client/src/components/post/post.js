@@ -1,24 +1,23 @@
 import React from 'react'
-import {v4} from "uuid";
 import moment from "moment";
 
 const Post = ({post}) => {
 
     return (
-        <div className='container-fluid w-75 mt-5 mb-5 db-posts' key={v4()}
+        <div className='container-fluid w-75 mt-5 mb-5 db-posts'
              data-testid='post-container'>
             <div className='row'>
                 <div className='col db-posts-area text-white mt-3' data-testid='post-name'>
-                    {post.name}
+                    {post.title}
                 </div>
                 <div className='col db-posts-area text-white mt-3 text-end' data-testid='post-title'>
-                    {post.title}
+                    {post.text}
                 </div>
             </div>
             <hr/>
             <div className='row'>
                 <div className='col text-white text-center db-posts-text' data-testid='post-text'>
-                    <p>{post.post}</p>
+                    <p>{post.text}</p>
                 </div>
             </div>
             <div className="row">

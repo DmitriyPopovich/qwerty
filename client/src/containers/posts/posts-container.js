@@ -1,15 +1,20 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Post from "../../components/post";
+import {useDispatch, useSelector} from "react-redux";
+import {getPostsData} from "../../store/reducers/posts-reducer/selectors/selectors";
+import {getPosts} from "../../store/reducers/posts-reducer/posts-reducer";
+import {v4} from "uuid";
 
 const PostsContainer = () => {
-
-
-    const posts = []
+    const dispatch = useDispatch()
+    useEffect(()=>{
+        dispatch(getPosts())
+    },[])
+    const posts = useSelector(getPostsData)
 
     return (
         <>
-            {posts && posts?.map(post => <Post post={post}/>)}
-            <p>no posts</p>
+            {posts?.map(post => <Post key={v4()} post={post}/>)}
         </>
     )
 }

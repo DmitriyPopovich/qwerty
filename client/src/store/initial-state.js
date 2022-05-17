@@ -6,13 +6,14 @@ const initialState = {
     isAuth: false
   },
   posts:{
-    data: false,
+    data: [],
     post:{
       id:false,
       isActivated: false,
       title:"",
       text: "",
-      author: false
+      author: false,
+      createdAt: ''
     }
   }
 };
